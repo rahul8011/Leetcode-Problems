@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+         ListNode *prev = head, *forward = head;
+        while (forward && forward->next) {
+            prev = prev->next;
+            forward = forward->next->next;
+            if (prev == forward) return true;
+        }
+        
+        return false;
+    }
+};
